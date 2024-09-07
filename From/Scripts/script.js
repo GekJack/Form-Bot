@@ -2,7 +2,6 @@ const tg = window.Telegram.WebApp;
 tg.expand();
 
 const Submitmouse = () => {
-    event.preventDefault();
     const typeProduct = "mouse";
     const brand = document.getElementById("mouseBrand").value;
     const mousedpi = document.getElementById("mousedpi").value;
