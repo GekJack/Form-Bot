@@ -9,10 +9,10 @@ const Submitmouse = () => {
     const mouseconnection = document.getElementById("mouseconnection").value;
     const mousesensor = document.getElementById("mousesensor").value;
     const mousebuttons = document.getElementById("mousebuttons").value;
-   // if (!brand || !mousedpi || !mouse_interface || !mouseconnection || !mousesensor || !mousebuttons) {
-      //  alert("Some fields are null");
-      //  return;
-   // }
+    if (!brand || !mousedpi || !mouse_interface || !mouseconnection || !mousesensor || !mousebuttons) {
+        alert("Some fields are null");
+        return;
+     }
     tg.sendData(JSON.stringify({
         type_product: typeProduct,
         brand: brand,
@@ -29,4 +29,4 @@ const Submitmouse = () => {
 
 
 const buttonSubmitMouse = document.getElementById("submitMouse");
-buttinSubmitMouse.addEventListener("click", Submitmouse);
+buttonSubmitMouse.addEventListener("click", Submitmouse);
