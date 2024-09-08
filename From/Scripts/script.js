@@ -1,6 +1,24 @@
 const tg = window.Telegram.WebApp;
 tg.expand();
+const formMouse = document.getElementById("mouseForm");
+const buttonSubmitMouse = document.getElementById("submitMouse");
 
+const checkFields = () => {
+    const brand = document.getElementById("mouseBrand").value;
+    const mousedpi = document.getElementById("mousedpi").value;
+    const mouse_interface = document.getElementById("mouse-interface").value;
+    const mouseconnection = document.getElementById("mouseconnection").value;
+    const mousesensor = document.getElementById("mousesensor").value;
+    const mousebuttons = document.getElementById("mousebuttons").value;
+    const mousePrice = document.getElementById("priceMouse").value;
+
+ if (brand && mousedpi && mouse_interface && mouseconnection && mousesensor && mousebuttons && mousePrice) {
+        buttonSubmitMouse.disabled = false; 
+    } else {
+        buttonSubmitMouse.disabled = true; 
+}
+         
+ };
 const Submitmouse = () => {
     const typeProduct = "mouse";
     const brand = document.getElementById("mouseBrand").value;
@@ -10,11 +28,6 @@ const Submitmouse = () => {
     const mousesensor = document.getElementById("mousesensor").value;
     const mousebuttons = document.getElementById("mousebuttons").value;
     const mousePrice = document.getElementById("priceMouse").value;
-     if (!brand || !mousedpi || !mouse_interface || !mouseconnection || !mousesensor || !mousebuttons || !mousePrice) {
-        // Использование showAlert из tg (Telegram WebApp)
-        tg.showAlert("Some fields are null!");
-        return; // Остановить выполнение функции
-    }
     tg.sendData(JSON.stringify({
         type_product: typeProduct,
         brand: brand,
@@ -26,10 +39,13 @@ const Submitmouse = () => {
         mouse_price: mousePrice
     }));
     tg.close();
-}
+};
 
 
-
+ formMouse.querySelectorAll('input, select').forEach(element => {
+        element.addEventListener('input', checkFields);
+        element.addEventListener('change', checkFields);
+    });
 
 const buttonSubmitMouse = document.getElementById("submitMouse");
 buttonSubmitMouse.addEventListener("click", Submitmouse);
