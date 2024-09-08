@@ -39,7 +39,7 @@ const Submitmouse = () => {
         mouse_price: mousePrice
     }));
     tg.close();
-};
+}ж
 
 
  formMouse.querySelectorAll('input, select').forEach(element => {
@@ -47,5 +47,4 @@ const Submitmouse = () => {
         element.addEventListener('change', checkFields);
     });
 
-const buttonSubmitMouse = document.getElementById("submitMouse");
 buttonSubmitMouse.addEventListener("click", Submitmouse);
