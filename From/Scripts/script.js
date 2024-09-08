@@ -22,7 +22,7 @@ const Submitmouse = () => {
         mouse_interface: mouse_interface,
         mouse_connection: mouseconnection,
         mouse_sensor: mousesensor,
-        mouse_buttons: mousebuttons
+        mouse_buttons: mousebuttons,
         mouse_price: mousePrice
     }));
     tg.close();
