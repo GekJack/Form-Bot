@@ -9,6 +9,11 @@ const Submitmouse = () => {
     const mouseconnection = document.getElementById("mouseconnection").value;
     const mousesensor = document.getElementById("mousesensor").value;
     const mousebuttons = document.getElementById("mousebuttons").value;
+     if (!brand || !mousedpi || !mouse_interface || !mouseconnection || !mousesensor || !mousebuttons) {
+        // Использование showAlert из tg (Telegram WebApp)
+        tg.showAlert("Some fields are null!");
+        return; // Остановить выполнение функции
+    }
     tg.sendData(JSON.stringify({
         type_product: typeProduct,
         brand: brand,
