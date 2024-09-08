@@ -9,7 +9,8 @@ const Submitmouse = () => {
     const mouseconnection = document.getElementById("mouseconnection").value;
     const mousesensor = document.getElementById("mousesensor").value;
     const mousebuttons = document.getElementById("mousebuttons").value;
-     if (!brand || !mousedpi || !mouse_interface || !mouseconnection || !mousesensor || !mousebuttons) {
+    const mousePrice = document.getElementById("priceMouse").value;
+     if (!brand || !mousedpi || !mouse_interface || !mouseconnection || !mousesensor || !mousebuttons || !mousePrice) {
         // Использование showAlert из tg (Telegram WebApp)
         tg.showAlert("Some fields are null!");
         return; // Остановить выполнение функции
@@ -22,6 +23,7 @@ const Submitmouse = () => {
         mouse_connection: mouseconnection,
         mouse_sensor: mousesensor,
         mouse_buttons: mousebuttons
+        mouse_price: mousePrice
     }));
     tg.close();
 }
