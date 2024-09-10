@@ -2,7 +2,28 @@ const tg = window.Telegram.WebApp;
 tg.expand();
 const formMouse = document.getElementById("mouseForm");
 const buttonSubmitMouse = document.getElementById("submitMouse");
+const buttonSubmitSystem = document.getElementById("submitSystem");
 
+const SubmitSystem = () =>{
+    const type = document.getElementById("type_pr").value;
+    const brand = document.getElementById("brand").value;
+    const name = document.getElementById("name").value;
+    const price = document.getElementById("price").value;
+    const in_stock = document.getElementById("in_stock").value;
+    const description = document.getElementById("description").value;
+    const CPU = document.getElementById("CPU").value;
+    const cooler = document.getElementById("cooler").value;
+    const motherboard = document.getElementById("motherboard").value;
+    const RAM = document.getElementById("RAM").value;
+    const GPU = document.getElementById("GPU").value;
+    const SSD = document.getElementById("SSD").value;
+    const HDD = document.getElementById("HDD").value;
+    const Power_supply_unit = document.getElementById("Power_supply_unit").value;
+    const hull = document.getElementById("hull").value;
+    // Отправка данных в Telegram
+    tg.sendData(JSON.stringify({ type_product: type, brand: brand,Name: name,price:price,in_stock:in_stock, description:description, CPU:CPU, cooler:cooler ,motherboard:motherboard,RAM:RAM, GPU:GPU, SDD:SSD, HDD:HDD, Power_supply_unit:Power_supply_unit,hull:hull }));
+    tg.close();
+}
 
 const Submitmouse = () => {
     const typeProduct = "mouse";
@@ -27,3 +48,4 @@ const Submitmouse = () => {
 }
 
 buttonSubmitMouse.addEventListener("click", Submitmouse);
+buttonSubmitSystem.addEventListener("click", SubmitSystem);
