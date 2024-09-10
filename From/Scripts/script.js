@@ -5,7 +5,7 @@ const buttonSubmitMouse = document.getElementById("submitMouse");
 const buttonSubmitSystem = document.getElementById("submitSystem");
 
 const SubmitSystem = () =>{
-    const type = document.getElementById("type_pr").value;
+    const type = "system_unit"
     const brand = document.getElementById("brand").value;
     const name = document.getElementById("name").value;
     const price = document.getElementById("price").value;
